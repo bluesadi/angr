@@ -3,6 +3,7 @@ from typing import Optional, Union
 
 from archinfo import Arch
 
+from .debogus import Debogus
 from .optimization_pass import OptimizationPassStage
 from .stack_canary_simplifier import StackCanarySimplifier
 from .base_ptr_save_simplifier import BasePointerSaveSimplifier
@@ -54,6 +55,7 @@ _all_optimization_passes = [
     (CrossJumpReverter, True),
     (FlipBooleanCmp, True),
     (InlinedStringTransformationSimplifier, True),
+    (Debogus, True)
 ]
 
 # these passes may duplicate code to remove gotos or improve the structure of the graph
